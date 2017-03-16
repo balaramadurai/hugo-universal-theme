@@ -1,0 +1,5 @@
+#+TITLE: My Hugo Blog Post in Org
+#+DATE: 2017-02-13
+#+PUBLISHDATE: 2017-02-15
+#+BANNER: img/Buddha.jpg
+
