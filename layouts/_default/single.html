@@ -24,19 +24,18 @@
 
                     <div class="col-md-9" id="blog-post">
 
-                        <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}By <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
+                        <p class="text-muted text-uppercase mb-small text-right">{{ if .Params.author }}By <a href="/{{ .Params.author }}/">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
 
                         <div id="post-content">
                           {{ .Content }}
                         </div>
-			
+		
                         <!-- /#post-content -->
                         {{ if .Site.DisqusShortname }}
                         <div id="comments">
                             {{ template "_internal/disqus.html" . }}
                         </div>
                         {{ end }}
-
                     </div>
                     <!-- /#blog-post -->
 

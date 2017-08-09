@@ -1,0 +1,58 @@
+{{ if isset .Site.Params.widgets "author" }}
+{{ if .Site.Params.widgets.author }}
+{{ if gt (len .Site.Data.authors) 0 }}
+
+
+{{ if .Params.author }}
+<div id="profile">
+  <h2> About the Author </h2>
+  <div class="portrait" itemprop="image"
+       style="background-image: url('{{ $.Params.authorface }}');">
+  </div>
+  <div class="portrait-title">
+    <h2 itemprop="name">{{ .Params.author }}</h2>
+    <h3 itemprop="jobTitle">{{ .Params.authorrole }}</h3>
+    {{ if .Params.authororganization }}
+    <h3 itemprop="worksFor">
+      {{ with .Params.authororganization_url }}<a href="{{ . }}" target="_blank">{{ end }}
+	{{ .Params.authororganization }}
+	{{ if .Params.authororganization_url }}</a>{{ end }}
+    </h3>
+    {{ end }}
+    {{ if .Params.authordescription }}
+    <i>
+      {{ .Params.authordescription | markdownify }}
+    </i>
+    
+    {{ end }}
+  </div>
+</div>
+{{ else }}		
+<div id="profile">
+  <h2> About the Author </h2>
+  <div class="portrait" itemprop="image"
+       style="background-image: url('{{ $.Site.Params.authorface }}');">
+  </div>
+  <div class="portrait-title">
+    <h2 itemprop="name">{{ .Site.Params.author }}</h2>
+    <h3 itemprop="jobTitle">{{ .Site.Params.authorrole }}</h3>
+    {{ if .Site.Params.authororganization }}
+    <h3 itemprop="worksFor">
+      {{ with .Site.Params.authororganization_url }}<a href="{{ . }}" target="_blank">{{ end }}
+	{{ .Site.Params.authororganization }}
+	{{ if .Site.Params.authororganization_url }}</a>{{ end }}
+    </h3>
+    {{ end }}
+    {{ if .Site.Params.authordescription }}
+    <i>
+      {{ .Site.Params.authordescription | markdownify }}
+    </i>
+
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{ end }}
+{{ end }}
+{{ end }}
